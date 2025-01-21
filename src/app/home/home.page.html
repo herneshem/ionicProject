@@ -1,20 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu menuId="first-menu" contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>First Menu</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding">This is the first menu content.</ion-content>
+</ion-menu>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<ion-menu menuId="second-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Second Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">This is the second menu content.</ion-content>
+</ion-menu>
+
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>End Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">This is the end menu content.</ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Header Toolbar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-button expand="block" (click)="openFirstMenu()">Open First Menu</ion-button>
+    <ion-button expand="block" (click)="openSecondMenu()">Open Second Menu</ion-button>
+    <ion-button expand="block" (click)="openEndMenu()">Open End Menu</ion-button>
+
+
+
+    <ion-list>
+      <ion-item>
+        <ion-input label="Altura" placeholder="{{Altura}}"  [(ngModel)]="Altura"></ion-input>
+      </ion-item>
+    
+      <div class="ion-padding-start">
+        <ion-input label="Peso" placeholder="{{Peso}}" [(ngModel)]="Peso" ></ion-input>
+      </div>
+    </ion-list>
+
+    <ion-button size="small" (click)="calcularIMC()">Calcular</ion-button>
+
+
+    <ion-item>
+      <ion-input label="IMC"  placeholder="{{resultado}}"></ion-input>
+    </ion-item>
+  </ion-content>
+</div>
